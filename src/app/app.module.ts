@@ -12,6 +12,9 @@ import { RoofingMaterialsComponent } from './roofing-materials/roofing-materials
 import { TileworkComponent } from './tilework/tilework.component';
 import { HardwareComponent } from './hardware/hardware.component';
 import { PaintingComponent } from './painting/painting.component';
+import { HomeComponent } from './home/home.component';
+
+import { TreeModule } from 'primeng/tree';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,11 @@ import { PaintingComponent } from './painting/painting.component';
     RoofingMaterialsComponent,
     TileworkComponent,
     HardwareComponent,
-    PaintingComponent
+    PaintingComponent,
+    HomeComponent
   ],
   imports: [
+    TreeModule,
     BrowserModule,
     AppRoutingModule
   ],
