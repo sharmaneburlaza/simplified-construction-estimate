@@ -15,15 +15,21 @@ export class HomeComponent {
       children: [
         { 
           key: '0-0-0', 
-          label: 'Expenses.doc', 
+          label: 'Concrete Slab', 
           icon: 'pi pi-fw pi-file', 
-          data: 'Expenses Document' 
+          data: 'Concrete Slab' 
         },
         { 
           key: '0-0-0', 
-          label: 'Expenses.doc', 
+          label: 'Square Concrete Columns', 
           icon: 'pi pi-fw pi-file', 
-          data: 'Expenses Document' 
+          data: 'Square Concrete Columns' 
+        },
+        { 
+          key: '0-0-0', 
+          label: 'Post and Footing', 
+          icon: 'pi pi-fw pi-file', 
+          data: 'Post and Footing' 
         },
       ]
     },

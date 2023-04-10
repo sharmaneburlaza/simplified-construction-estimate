@@ -15,6 +15,9 @@ import { PaintingComponent } from './painting/painting.component';
 import { HomeComponent } from './home/home.component';
 
 import { TreeModule } from 'primeng/tree';
+import { ConcreteSlabComponent } from './concrete/concrete-slab/concrete-slab.component';
+import { SquareConcreteColumnComponent } from './concrete/square-concrete-column/square-concrete-column.component';
+import { PostAndFootingComponent } from './concrete/post-and-footing/post-and-footing.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { TreeModule } from 'primeng/tree';
     TileworkComponent,
     HardwareComponent,
     PaintingComponent,
-    HomeComponent
+    HomeComponent,
+    ConcreteSlabComponent,
+    SquareConcreteColumnComponent,
+    PostAndFootingComponent
   ],
   imports: [
     TreeModule,
