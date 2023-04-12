@@ -2,7 +2,7 @@
 
 WORK-IN-PROGRESS
 
-Computations employed are based on the book titled Simplified Construction Estimates by Max Fajardo
+Formulas/computations employed are based on the book titled Simplified Construction Estimates by Max Fajardo
 
 ## About
 
