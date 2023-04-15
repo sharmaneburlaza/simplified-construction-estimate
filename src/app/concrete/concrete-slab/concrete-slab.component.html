@@ -35,5 +35,18 @@
                 <span>50 kg</span>
             </label>
         </div>
+        <div class="form-group my-4">
+            <button class="btn btn-primary" type="submit" [disabled]="cForm.invalid">
+                Submit
+            </button>
+        </div>
     </form>
+
+    <div>
+        <h4>AGGREGATES</h4>
+        <p>Cement: {{aggregates?.cement}}</p>
+        <p>Sand: {{aggregates?.sand}}</p>
+        <p>Gravel: {{aggregates?.gravel}}</p>  
+    </div>
+
 </div>
