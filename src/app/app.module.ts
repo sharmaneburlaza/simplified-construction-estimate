@@ -14,6 +14,7 @@ import { PaintingComponent } from './painting/painting.component';
 import { HomeComponent } from './home/home.component';
 
 import { TreeModule } from 'primeng/tree';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TreeModule } from 'primeng/tree';
     HomeComponent,
   ],
   imports: [
+    DropdownModule,
     TreeModule,
     BrowserModule,
     AppRoutingModule

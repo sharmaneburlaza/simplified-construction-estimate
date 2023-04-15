@@ -1,1 +1,39 @@
+
 <h3>CONCRETE SLAB</h3>
+<p>Input the following:</p>
+<div>
+    <form [formGroup]="cForm" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group my-2">
+            <input class="form-control" 
+                formControlName="thickness" 
+                type="number" 
+                placeholder="Thickness">
+        </div>
+        <div class="form-group my-2">
+            <input class="form-control" 
+                formControlName="width" 
+                type="number" 
+                placeholder="Width">
+        </div>
+        <div class="form-group my-2">
+            <input class="form-control" 
+                formControlName="length" 
+                type="number" 
+                placeholder="Length">
+        </div>
+        <select formControlName="proportionClass" class="form-control">
+            <option value="" disabled>Select Proportion Class</option>
+            <option *ngFor="let pclass of concretePropClasses" [ngValue]="pclass">{{pclass}}</option>
+        </select>
+        <div class="form-group my-2">
+            <label>
+                <input type="radio" value="40" formControlName="cementBag">
+                <span>40 kg</span>
+            </label>
+            <label class="px-5">
+                <input type="radio" value="50" formControlName="cementBag">
+                <span>50 kg</span>
+            </label>
+        </div>
+    </form>
+</div>
