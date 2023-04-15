@@ -1,14 +1,19 @@
-<h1>Items</h1>
-
-<ul>
-    <li *ngFor="let items of nodes">
-        {{items.label}}
+<div id="wrapper">
+    <div id="left">
+        <h1>Items</h1>
         <ul>
-            <li *ngFor="let item of items.children">
-                <a [href]="item.data.href" [routerLink]="item.data.routerLink">{{item.label}}</a>
+            <li *ngFor="let items of nodes">
+                {{items.label}}
+                <ul>
+                    <li *ngFor="let item of items.children">
+                        <a [href]="item.data.href" [routerLink]="item.data.routerLink">{{item.label}}</a>
+                    </li>
+                </ul>
             </li>
         </ul>
-    </li>
-</ul>
+    </div>
+    <div id="right">
+        <router-outlet></router-outlet>
+    </div>
+</div>
 
-<router-outlet></router-outlet>

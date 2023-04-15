@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TreeNode } from 'primeng/api';
-import { CONCRETE, ROUTES } from './_shared/constants/routes';
+import { CONCRETE, Path } from './_shared/constants/routes';
 
 @Component({
   selector: 'app-root',
@@ -18,27 +18,59 @@ export class AppComponent {
         label: 'Concrete',
         children: [
           { 
-            key: 'concrete-slab',
+            key: Path.CONCRETE_SLAB,
             label: 'Concrete Slab',
             data: {
-              href: '/' + ROUTES.CONCRETE_SLAB,
-              routerLink: ROUTES.CONCRETE_SLAB
+              href: '/' + CONCRETE + '/' + Path.CONCRETE_SLAB,
+              routerLink: CONCRETE + '/' + Path.CONCRETE_SLAB
             }
           },
           { 
-            key: 'square-concrete-columns', 
+            key: Path.SQUARE_CONCRETE_COLUMN, 
             label: 'Square Concrete Columns', 
             data: {
-              href: '/' + ROUTES.SQUARE_CONCRETE_COLUMN,
-              routerLink: ROUTES.SQUARE_CONCRETE_COLUMN,
+              href: '/' + CONCRETE + '/' + Path.SQUARE_CONCRETE_COLUMN,
+              routerLink: CONCRETE + '/' + Path.SQUARE_CONCRETE_COLUMN,
             }
           },
           { 
-            key: '0-0-0', 
-            label: 'Post and Footing', 
+            key: Path.POST_AND_FOOTING, 
+            label: 'Post and Footing',
             data: {
-              href: '/' + ROUTES.POST_AND_FOOTING,
-              routerLink: ROUTES.POST_AND_FOOTING,
+              href: '/' + CONCRETE + '/' + Path.POST_AND_FOOTING,
+              routerLink: CONCRETE + '/' + Path.POST_AND_FOOTING,
+            }
+          },
+          { 
+            key: Path.RECTANGULAR_COLUMN, 
+            label: 'Rectangular Column',
+            data: {
+              href: '/' + CONCRETE + '/' + Path.RECTANGULAR_COLUMN,
+              routerLink: CONCRETE + '/' + Path.RECTANGULAR_COLUMN,
+            }
+          },
+          { 
+            key: Path.RECTANGULAR_BEAM_AND_GIRDER, 
+            label: 'Rectangular Beam and Girder',
+            data: {
+              href: '/' + CONCRETE + '/' + Path.RECTANGULAR_BEAM_AND_GIRDER,
+              routerLink: CONCRETE + '/' + Path.RECTANGULAR_BEAM_AND_GIRDER,
+            }
+          },
+          { 
+            key: Path.CIRCULAR_COLUMN, 
+            label: 'Circular Column',
+            data: {
+              href: '/' + CONCRETE + '/' + Path.CIRCULAR_COLUMN,
+              routerLink: CONCRETE + '/' + Path.CIRCULAR_COLUMN,
+            }
+          },
+          { 
+            key: Path.CONCRETE_PIPE, 
+            label: 'Concrete Pipe',
+            data: {
+              href: '/' + CONCRETE + '/' + Path.CONCRETE_PIPE,
+              routerLink: CONCRETE + '/' + Path.CONCRETE_PIPE,
             }
           },
         ]
