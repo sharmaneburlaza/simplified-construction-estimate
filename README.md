@@ -1,10 +1,10 @@
-# SimplifiedConstructionEstimates
+# About the Project
 
 WORK-IN-PROGRESS
 
 Formulas/computations employed are based on the book titled Simplified Construction Estimates by Max Fajardo
 
-## About
+# SimplifiedConstructionEstimates
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
