@@ -45,9 +45,8 @@
             </label>
         </div>
         <div class="form-group my-4">
-            <button class="btn btn-primary" type="submit" [disabled]="cForm.invalid">
-                Submit
-            </button>
+            <button class="btn btn-primary mx-2" type="submit" [disabled]="cForm.invalid">Submit</button>
+            <button class="btn btn-primary mx-2" (click)="reset()">Reset</button>
         </div>
     </form>
 

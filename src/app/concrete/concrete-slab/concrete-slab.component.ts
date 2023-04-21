@@ -61,4 +61,27 @@ export class ConcreteSlabComponent {
       }
     }
   }
+
+  reset(): void {
+    this.resetForm();
+    this.resetAggregates();
+  }
+
+  resetForm(): void {
+    this.cForm?.patchValue({
+      thickness: null,
+      width: null,
+      length: null,
+      proportionClass: '',
+      cementBag: ''
+    });
+  }
+
+  resetAggregates(): void {
+    this.aggregates = {
+      cement: 0,
+      sand: 0,
+      gravel: 0
+    };
+  }
 }
