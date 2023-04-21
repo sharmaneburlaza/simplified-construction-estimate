@@ -1,1 +1,63 @@
-<p>square-concrete-column works!</p>
+<h3>{{'Square Concrete Column' | uppercase}}</h3>
+<p>Input the following:</p>
+<div>
+    <form [formGroup]="sccForm" novalidate>
+        <div class="form-group d-flex align-items-center my-2">
+            <label>Width</label>
+            <input class="form-control mx-2"
+                formControlName="width"
+                type="number"
+                placeholder="0">
+            <label class="px-2">
+                <input type="radio" value="inch" formControlName="widthUnit">
+                <span>inch</span>
+            </label>
+            <label class="px-2">
+                <input type="radio" value="cm" formControlName="widthUnit">
+                <span>cm</span>
+            </label>
+        </div>
+        <div class="form-group d-flex align-items-center my-2">
+            <label>Height</label>
+            <input class="form-control mx-2"
+                formControlName="height"
+                type="number"
+                placeholder="0">
+        </div>
+        <div class="form-group d-flex align-items-center my-2">
+            <label>Number of Columns</label>
+            <input class="form-control mx-2"
+                formControlName="numberOfColumns"
+                type="number"
+                placeholder="0">
+        </div>
+        <div class="form-group d-flex align-items-center my-2">
+            <label>Proportion Class</label>
+            <select formControlName="proportionClass" class="form-control mx-2">
+                <option value="" disabled>Select</option>
+                <option *ngFor="let pclass of concretePropClasses" [ngValue]="pclass">{{pclass}}</option>
+            </select>
+        </div>
+        <div class="form-group my-2">
+            <label>Cement Bag</label>
+            <label class="px-2">
+                <input type="radio" value="40" formControlName="cementBag">
+                <span>40 kg</span>
+            </label>
+            <label class="px-2">
+                <input type="radio" value="50" formControlName="cementBag">
+                <span>50 kg</span>
+            </label>
+        </div>
+        <div class="form-group my-4">
+            <button class="btn btn-primary mx-2" type="submit" [disabled]="sccForm.invalid">Submit</button>
+            <button class="btn btn-primary mx-2" (click)="reset()">Reset</button>
+        </div>
+    </form>
+    <div>
+        <h4>AGGREGATES</h4>
+        <p>Cement: {{aggregates.cement}} bags</p>
+        <p>Sand: {{aggregates.sand}} cu. m.</p>
+        <p>Gravel: {{aggregates.gravel}} cu. m.</p>
+    </div>
+</div>

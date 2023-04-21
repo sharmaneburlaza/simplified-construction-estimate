@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { concreteProportions } from 'src/app/_shared/constants/concrete-proportion';
+import { AGGREGATES } from 'src/app/_shared/constants/aggregates';
+import { CONCRETE_PROPORTIONS } from 'src/app/_shared/constants/concrete-proportion';
 import { Aggregates } from 'src/app/_shared/models/concrete-models';
+import { calculateAggregates } from 'src/app/_shared/utils';
 
 @Component({
   selector: 'app-concrete-slab',
@@ -12,54 +14,41 @@ export class ConcreteSlabComponent {
   concretePropClasses: string[] = [];
   cementBags: number[] = [40, 50]
   cForm!: FormGroup<any>;
-  aggregates: Aggregates = {
-    cement: 0,
-    sand: 0,
-    gravel: 0
-  };
+  aggregates: Aggregates = AGGREGATES;
 
   constructor(private fb: FormBuilder) {}
   
-  ngOnInit() {
+  ngOnInit(): void {
+    this.initForm();
+    this.getConcretePropClass();
+  }
+
+  initForm(): void {
     this.cForm = this.fb.group({
       thickness: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       width: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       length: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       proportionClass: ['', [Validators.required]],
-      cementBag: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      cementBag: ['', [Validators.required]],
     });
-    this.getConcretePropClass();
   }
 
-  onSubmit() {
-    this.calculateAggregates();
+  onSubmit(): void {
+    this.getAggregates();
   }
 
   getConcretePropClass(): void {
-    concreteProportions.forEach(cp => this.concretePropClasses.push(cp.class));
+    CONCRETE_PROPORTIONS.forEach(cp => this.concretePropClasses.push(cp.class));
   }
 
   getVolume(thickness: number , width: number, length: number): number {
     return thickness * width * length;
   }
 
-  calculateAggregates() {
+  getAggregates(): void {
     const {thickness, width, length, proportionClass, cementBag} = this.cForm?.value;
     const volume = this.getVolume(+thickness, +width, +length);
-    const propClass = concreteProportions.find(cp => cp.class === proportionClass);
-    if (propClass) {
-      let cement;
-      const sand = +volume * +propClass.sand;
-      const gravel = +volume * +propClass.gravel;
-      if (cementBag == 40) {
-        cement = +volume * +propClass.cementInBag40kg;
-      } else if (cementBag == 50) {
-        cement = +volume * +propClass.cementInBag50kg;
-      }
-      if (cement && sand && gravel) {
-        this.aggregates = {cement, sand, gravel};
-      }
-    }
+    this.aggregates = calculateAggregates(proportionClass, volume, cementBag);
   }
 
   reset(): void {
@@ -78,10 +67,6 @@ export class ConcreteSlabComponent {
   }
 
   resetAggregates(): void {
-    this.aggregates = {
-      cement: 0,
-      sand: 0,
-      gravel: 0
-    };
+    this.aggregates = AGGREGATES;
   }
 }

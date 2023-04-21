@@ -1,7 +1,7 @@
 const SAND = 0.5;
 const GRAVEL = 1;
 
-export const concreteProportions = [
+export const CONCRETE_PROPORTIONS = [
     {
         class: 'AA',
         proportion: [1, 1.5, 3],

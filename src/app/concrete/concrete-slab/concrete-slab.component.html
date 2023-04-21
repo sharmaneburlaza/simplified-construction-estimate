@@ -1,34 +1,34 @@
 
-<h3>CONCRETE SLAB</h3>
+<h3>{{'Concrete Slab' | uppercase}}</h3>
 <p>Input the following:</p>
 <div>
     <form [formGroup]="cForm" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
-        <div class="form-group my-2">
+        <div class="form-group d-flex align-items-center my-2">
             <label>Thickness (meter)</label>
-            <input class="form-control" 
+            <input class="form-control mx-2" 
                 formControlName="thickness" 
                 type="number"
                 size="20"
                 placeholder="0">
             
         </div>
-        <div class="form-group my-2">
+        <div class="form-group d-flex align-items-center my-2">
             <label>Width (meter)</label>
-            <input class="form-control" 
+            <input class="form-control mx-2" 
                 formControlName="width" 
                 type="number" 
                 placeholder="0">
         </div>
-        <div class="form-group my-2">
+        <div class="form-group d-flex align-items-center my-2">
             <label>Length (meter)</label>
-            <input class="form-control" 
+            <input class="form-control mx-2" 
                 formControlName="length" 
                 type="number" 
                 placeholder="0">
         </div>
-        <div class="form-group my-2">
+        <div class="form-group d-flex align-items-center my-2">
             <label>Proportion Class</label>
-            <select formControlName="proportionClass" class="form-control">
+            <select formControlName="proportionClass" class="form-control mx-2">
                 <option value="" disabled>Select</option>
                 <option *ngFor="let pclass of concretePropClasses" [ngValue]="pclass">{{pclass}}</option>
             </select>
