@@ -12,17 +12,21 @@ export class ConcreteSlabComponent {
   concretePropClasses: string[] = [];
   cementBags: number[] = [40, 50]
   cForm!: FormGroup<any>;
-  aggregates: Aggregates | undefined;
+  aggregates: Aggregates = {
+    cement: 0,
+    sand: 0,
+    gravel: 0
+  };
 
   constructor(private fb: FormBuilder) {}
   
   ngOnInit() {
     this.cForm = this.fb.group({
-      thickness: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      width: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      length: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
+      thickness: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
+      width: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
+      length: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       proportionClass: ['', [Validators.required]],
-      cementBag: [0, [Validators.required]],
+      cementBag: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
     });
     this.getConcretePropClass();
   }

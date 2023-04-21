@@ -4,33 +4,42 @@
 <div>
     <form [formGroup]="cForm" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
         <div class="form-group my-2">
+            <label>Thickness (meter)</label>
             <input class="form-control" 
                 formControlName="thickness" 
-                type="number" 
-                placeholder="Thickness">
+                type="number"
+                size="20"
+                placeholder="0">
+            
         </div>
         <div class="form-group my-2">
+            <label>Width (meter)</label>
             <input class="form-control" 
                 formControlName="width" 
                 type="number" 
-                placeholder="Width">
+                placeholder="0">
         </div>
         <div class="form-group my-2">
+            <label>Length (meter)</label>
             <input class="form-control" 
                 formControlName="length" 
                 type="number" 
-                placeholder="Length">
+                placeholder="0">
         </div>
-        <select formControlName="proportionClass" class="form-control">
-            <option value="" disabled>Select Proportion Class</option>
-            <option *ngFor="let pclass of concretePropClasses" [ngValue]="pclass">{{pclass}}</option>
-        </select>
         <div class="form-group my-2">
-            <label>
+            <label>Proportion Class</label>
+            <select formControlName="proportionClass" class="form-control">
+                <option value="" disabled>Select</option>
+                <option *ngFor="let pclass of concretePropClasses" [ngValue]="pclass">{{pclass}}</option>
+            </select>
+        </div>
+        <div class="form-group my-2">
+            <label>Cement Bag</label>
+            <label class="px-2">
                 <input type="radio" value="40" formControlName="cementBag">
                 <span>40 kg</span>
             </label>
-            <label class="px-5">
+            <label class="px-2">
                 <input type="radio" value="50" formControlName="cementBag">
                 <span>50 kg</span>
             </label>
@@ -44,9 +53,9 @@
 
     <div>
         <h4>AGGREGATES</h4>
-        <p>Cement: {{aggregates?.cement}}</p>
-        <p>Sand: {{aggregates?.sand}}</p>
-        <p>Gravel: {{aggregates?.gravel}}</p>  
+        <p>Cement: {{aggregates?.cement}} bags</p>
+        <p>Sand: {{aggregates?.sand}} cu. m.</p>
+        <p>Gravel: {{aggregates?.gravel}} cu. m.</p>  
     </div>
 
 </div>
