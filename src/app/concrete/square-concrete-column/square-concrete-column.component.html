@@ -1,7 +1,7 @@
 <h3>{{'Square Concrete Column' | uppercase}}</h3>
 <p>Input the following:</p>
 <div>
-    <form [formGroup]="sccForm" novalidate>
+    <form [formGroup]="sccForm" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
         <div class="form-group d-flex align-items-center my-2">
             <label>Width</label>
             <input class="form-control mx-2"

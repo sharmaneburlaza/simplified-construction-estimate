@@ -4,15 +4,15 @@ import { Aggregates } from "./models/concrete-models";
 
 export function calculateAggregates(proportionClass: string, volume: number, cementBag: string): Aggregates {
   const propClass = CONCRETE_PROPORTIONS.find(cp => cp.class === proportionClass);
-  let aggregates = AGGREGATES;
+  let cement=0, sand=0, gravel=0;
   if (propClass) {
-    aggregates.sand = +volume * +propClass.sand;
-    aggregates.gravel = +volume * +propClass.gravel;
+    sand = +(volume * propClass.sand).toFixed(3);
+    gravel = +(volume * propClass.gravel).toFixed(3);
     if (cementBag === '40') {
-      aggregates.cement = +volume * +propClass.cementInBag40kg;
+      cement = +(volume * propClass.cementInBag40kg).toFixed(3);
     } else if (cementBag === '50') {
-      aggregates.cement = +volume * +propClass.cementInBag50kg;
+      cement = +(volume * propClass.cementInBag50kg).toFixed(3);
     }
   }
-  return aggregates;
+  return {cement, sand, gravel};
 }
