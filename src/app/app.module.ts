@@ -15,6 +15,11 @@ import { HomeComponent } from './home/home.component';
 
 import { TreeModule } from 'primeng/tree';
 import { DropdownModule } from 'primeng/dropdown';
+import { ConcreteHollowBlocksComponent } from './masonry/concrete-hollow-blocks/concrete-hollow-blocks.component';
+import { AdobeStoneComponent } from './masonry/adobe-stone/adobe-stone.component';
+import { RiprapComponent } from './masonry/riprap/riprap.component';
+import { ConcreteRetainingWallComponent } from './masonry/concrete-retaining-wall/concrete-retaining-wall.component';
+import { GabionAndMattressComponent } from './masonry/gabion-and-mattress/gabion-and-mattress.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { DropdownModule } from 'primeng/dropdown';
     HardwareComponent,
     PaintingComponent,
     HomeComponent,
+    ConcreteHollowBlocksComponent,
+    AdobeStoneComponent,
+    RiprapComponent,
+    ConcreteRetainingWallComponent,
+    GabionAndMattressComponent,
   ],
   imports: [
     DropdownModule,

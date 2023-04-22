@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AGGREGATES } from 'src/app/_shared/constants/aggregates';
-import { CONCRETE_PROPORTIONS } from 'src/app/_shared/constants/concrete-proportion';
-import { Aggregates } from 'src/app/_shared/models/concrete-models';
-import { calculateAggregates } from 'src/app/_shared/utils';
+import { AGGREGATES } from 'src/app/_lib/constants/aggregates';
+import { CONCRETE_PROPORTIONS } from 'src/app/_lib/constants/concrete-proportion';
+import { Aggregates } from 'src/app/_lib/models/concrete-models';
+import { calculateAggregates } from 'src/app/_lib/utils';
 
 const METER_PER_INCH = 0.0254;
 const METER_PER_CM = 0.01;

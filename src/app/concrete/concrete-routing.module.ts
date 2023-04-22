@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Path } from '../_shared/constants/routes';
+import { Path } from '../_lib/constants/routes';
 import { CircularColumnComponent } from './circular-column/circular-column.component';
 import { ConcretePipeComponent } from './concrete-pipe/concrete-pipe.component';
 import { ConcreteSlabComponent } from './concrete-slab/concrete-slab.component';

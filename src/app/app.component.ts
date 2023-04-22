@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { TreeNode } from 'primeng/api';
-import { CONCRETE, Path } from './_shared/constants/routes';
+import { Item, Path, ROUTERLINK } from './_lib/constants/routes';
 
 @Component({
   selector: 'app-root',
@@ -14,71 +13,91 @@ export class AppComponent {
   ngOnInit() {
     this.nodes = [
       {
-        key: CONCRETE,
+        key: Item.CONCRETE,
         label: 'Concrete',
         children: [
           { 
             key: Path.CONCRETE_SLAB,
             label: 'Concrete Slab',
             data: {
-              href: '/' + CONCRETE + '/' + Path.CONCRETE_SLAB,
-              routerLink: CONCRETE + '/' + Path.CONCRETE_SLAB
+              href: '/' + ROUTERLINK.concreteSlab,
+              routerLink: ROUTERLINK.concreteSlab
             }
           },
           { 
             key: Path.SQUARE_CONCRETE_COLUMN, 
             label: 'Square Concrete Columns', 
             data: {
-              href: '/' + CONCRETE + '/' + Path.SQUARE_CONCRETE_COLUMN,
-              routerLink: CONCRETE + '/' + Path.SQUARE_CONCRETE_COLUMN,
+              href: '/' + ROUTERLINK.squareConcreteColumn,
+              routerLink: ROUTERLINK.squareConcreteColumn,
             }
           },
           { 
             key: Path.POST_AND_FOOTING, 
             label: 'Post and Footing',
             data: {
-              href: '/' + CONCRETE + '/' + Path.POST_AND_FOOTING,
-              routerLink: CONCRETE + '/' + Path.POST_AND_FOOTING,
+              href: '/' + ROUTERLINK.postAndFooting,
+              routerLink: ROUTERLINK.postAndFooting,
             }
           },
           { 
             key: Path.RECTANGULAR_COLUMN, 
             label: 'Rectangular Column',
             data: {
-              href: '/' + CONCRETE + '/' + Path.RECTANGULAR_COLUMN,
-              routerLink: CONCRETE + '/' + Path.RECTANGULAR_COLUMN,
+              href: '/' + ROUTERLINK.rectangularColumn,
+              routerLink: ROUTERLINK.rectangularColumn,
             }
           },
           { 
             key: Path.RECTANGULAR_BEAM_AND_GIRDER, 
             label: 'Rectangular Beam and Girder',
             data: {
-              href: '/' + CONCRETE + '/' + Path.RECTANGULAR_BEAM_AND_GIRDER,
-              routerLink: CONCRETE + '/' + Path.RECTANGULAR_BEAM_AND_GIRDER,
+              href: '/' + ROUTERLINK.rectangularBeamAndGirder,
+              routerLink: ROUTERLINK.rectangularBeamAndGirder,
             }
           },
           { 
             key: Path.CIRCULAR_COLUMN, 
             label: 'Circular Column',
             data: {
-              href: '/' + CONCRETE + '/' + Path.CIRCULAR_COLUMN,
-              routerLink: CONCRETE + '/' + Path.CIRCULAR_COLUMN,
+              href: '/' + ROUTERLINK.circularColumn,
+              routerLink: ROUTERLINK.circularColumn,
             }
           },
           { 
             key: Path.CONCRETE_PIPE, 
             label: 'Concrete Pipe',
             data: {
-              href: '/' + CONCRETE + '/' + Path.CONCRETE_PIPE,
-              routerLink: CONCRETE + '/' + Path.CONCRETE_PIPE,
+              href: '/' + ROUTERLINK.concretePipe,
+              routerLink: ROUTERLINK.concretePipe
             }
           },
         ]
       },
       {
         key: '1',
-        label: 'Metal Reinforcement',
+        label: 'Masonry',
         data: 'Masonry Folder',
+        icon: 'pi pi-fw pi-inbox',
+        children: [
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+        ]
+      },
+      {
+        key: '1',
+        label: 'Metal Reinforcement',
+        data: 'Metal Reinforcement',
         icon: 'pi pi-fw pi-inbox',
         children: [
           { 
