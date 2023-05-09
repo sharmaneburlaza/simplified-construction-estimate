@@ -12,6 +12,7 @@ import { CircularColumnComponent } from './circular-column/circular-column.compo
 import { ConcretePipeComponent } from './concrete-pipe/concrete-pipe.component';
 
 import { DropdownModule } from 'primeng/dropdown';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { DropdownModule } from 'primeng/dropdown';
     ConcretePipeComponent
   ],
   imports: [
+    // RouterModule,
     DropdownModule,
     CommonModule,
     ConcreteRoutingModule,

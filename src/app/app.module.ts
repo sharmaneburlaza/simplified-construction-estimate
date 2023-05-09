@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MasonryComponent } from './masonry/masonry.component';
 import { MetalReinforcementComponent } from './metal-reinforcement/metal-reinforcement.component';
 import { LumberComponent } from './lumber/lumber.component';
 import { FormsScafoldingAndStagingComponent } from './forms-scafolding-and-staging/forms-scafolding-and-staging.component';
@@ -15,16 +14,11 @@ import { HomeComponent } from './home/home.component';
 
 import { TreeModule } from 'primeng/tree';
 import { DropdownModule } from 'primeng/dropdown';
-import { ConcreteHollowBlocksComponent } from './masonry/concrete-hollow-blocks/concrete-hollow-blocks.component';
-import { AdobeStoneComponent } from './masonry/adobe-stone/adobe-stone.component';
-import { RiprapComponent } from './masonry/riprap/riprap.component';
-import { ConcreteRetainingWallComponent } from './masonry/concrete-retaining-wall/concrete-retaining-wall.component';
-import { GabionAndMattressComponent } from './masonry/gabion-and-mattress/gabion-and-mattress.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MasonryComponent,
     MetalReinforcementComponent,
     LumberComponent,
     FormsScafoldingAndStagingComponent,
@@ -33,11 +27,6 @@ import { GabionAndMattressComponent } from './masonry/gabion-and-mattress/gabion
     HardwareComponent,
     PaintingComponent,
     HomeComponent,
-    ConcreteHollowBlocksComponent,
-    AdobeStoneComponent,
-    RiprapComponent,
-    ConcreteRetainingWallComponent,
-    GabionAndMattressComponent,
   ],
   imports: [
     DropdownModule,

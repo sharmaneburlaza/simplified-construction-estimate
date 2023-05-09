@@ -82,14 +82,27 @@ export class AppComponent {
         children: [
           { 
             key: '0-0-0', 
-            label: 'Expenses.doc', 
-            icon: 'pi pi-fw pi-file', 
+            label: 'Concrete Hollow Blocks', 
             data: 'Expenses Document' 
           },
           { 
             key: '0-0-0', 
-            label: 'Expenses.doc', 
-            icon: 'pi pi-fw pi-file', 
+            label: 'Adobe Stone', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Riprap', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Concrete Retaining Wall', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Gabion and Mattress', 
             data: 'Expenses Document' 
           },
         ]
@@ -100,6 +113,42 @@ export class AppComponent {
         data: 'Metal Reinforcement',
         icon: 'pi pi-fw pi-inbox',
         children: [
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
+          { 
+            key: '0-0-0', 
+            label: 'Expenses.doc', 
+            icon: 'pi pi-fw pi-file', 
+            data: 'Expenses Document' 
+          },
           { 
             key: '0-0-0', 
             label: 'Expenses.doc', 
