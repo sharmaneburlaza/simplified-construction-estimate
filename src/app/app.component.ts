@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item, Path, ROUTERLINK } from './_lib/constants/routes';
 
 @Component({
@@ -9,6 +10,8 @@ import { Item, Path, ROUTERLINK } from './_lib/constants/routes';
 export class AppComponent {
   title = 'simplified-construction-estimates';
   nodes: any = [];
+ 
+  constructor(private router: Router) {}
   
   ngOnInit() {
     this.nodes = [
@@ -19,58 +22,37 @@ export class AppComponent {
           { 
             key: Path.CONCRETE_SLAB,
             label: 'Concrete Slab',
-            data: {
-              href: '/' + ROUTERLINK.concreteSlab,
-              routerLink: ROUTERLINK.concreteSlab
-            }
+            routerLink: ROUTERLINK.concreteSlab
           },
           { 
             key: Path.SQUARE_CONCRETE_COLUMN, 
             label: 'Square Concrete Columns', 
-            data: {
-              href: '/' + ROUTERLINK.squareConcreteColumn,
-              routerLink: ROUTERLINK.squareConcreteColumn,
-            }
+            routerLink: ROUTERLINK.squareConcreteColumn,
           },
           { 
             key: Path.POST_AND_FOOTING, 
             label: 'Post and Footing',
-            data: {
-              href: '/' + ROUTERLINK.postAndFooting,
-              routerLink: ROUTERLINK.postAndFooting,
-            }
+            routerLink: ROUTERLINK.postAndFooting,
           },
           { 
             key: Path.RECTANGULAR_COLUMN, 
             label: 'Rectangular Column',
-            data: {
-              href: '/' + ROUTERLINK.rectangularColumn,
-              routerLink: ROUTERLINK.rectangularColumn,
-            }
+            routerLink: ROUTERLINK.rectangularColumn,
           },
           { 
             key: Path.RECTANGULAR_BEAM_AND_GIRDER, 
             label: 'Rectangular Beam and Girder',
-            data: {
-              href: '/' + ROUTERLINK.rectangularBeamAndGirder,
-              routerLink: ROUTERLINK.rectangularBeamAndGirder,
-            }
+            routerLink: ROUTERLINK.rectangularBeamAndGirder,
           },
           { 
             key: Path.CIRCULAR_COLUMN, 
             label: 'Circular Column',
-            data: {
-              href: '/' + ROUTERLINK.circularColumn,
-              routerLink: ROUTERLINK.circularColumn,
-            }
+            routerLink: ROUTERLINK.circularColumn,
           },
           { 
             key: Path.CONCRETE_PIPE, 
             label: 'Concrete Pipe',
-            data: {
-              href: '/' + ROUTERLINK.concretePipe,
-              routerLink: ROUTERLINK.concretePipe
-            }
+            routerLink: ROUTERLINK.concretePipe
           },
         ]
       },
@@ -284,5 +266,13 @@ export class AppComponent {
         ]
       }
     ]
+  }
+  
+  nodeSelect(event: { node: { routerLink: string; }; }) {
+    this.router.navigate(['/'+event.node.routerLink])
+  }
+
+  nodeUnselect(event: any) {
+
   }
 }

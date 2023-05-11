@@ -2,16 +2,9 @@
     <div id="left">
         <div class="container">
             <h1>Items</h1>
-            <ul>
-                <li *ngFor="let items of nodes">
-                    {{items.label}}
-                    <ul>
-                        <li *ngFor="let item of items.children">
-                            <a [href]="item.data.href" [routerLink]="item.data.routerLink">{{item.label}}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <p-tree class="w-full md:w-30rem" [value]="nodes" selectionMode="single"
+                (onNodeSelect)="nodeSelect($event)"(onNodeUnselect)="nodeUnselect($event)">
+            </p-tree>
         </div>
     </div>
     <div id="right">
@@ -20,4 +13,3 @@
         </div>
     </div>
 </div>
-
